@@ -1,5 +1,5 @@
 # Importing JDK and copying required files
-FROM openjdk:27
+FROM openjdk:17-oracle
 WORKDIR /app
 COPY pom.xml .
 COPY src src
@@ -13,7 +13,7 @@ RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Stage 2: Create the final Docker image using OpenJDK 19
-FROM openjdk:27
+FROM openjdk:17-oracle
 VOLUME /tmp
 
 # Copy the JAR from the build stage
