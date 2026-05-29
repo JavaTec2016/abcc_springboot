@@ -18,6 +18,6 @@ FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 # Copy the JAR from the build stage
-COPY --from=build /app/target/*.war app.war
-ENTRYPOINT ["java","-jar","/app.war"]
-EXPOSE 8080
+COPY --from=build /app/target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+EXPOSE 8090
