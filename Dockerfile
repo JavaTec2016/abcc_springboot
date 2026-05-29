@@ -14,9 +14,10 @@ RUN ./mvnw clean package -DskipTests
 
 # Stage 2: Create the final Docker image using OpenJDK 19
 FROM eclipse-temurin:21-jdk
-VOLUME /tmp
+
+WORKDIR /app
 
 # Copy the JAR from the build stage
 COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
-EXPOSE 8090
+EXPOSE 8080
