@@ -89,11 +89,14 @@
                             role="form"
                             th:action="@{/guardar}" th:object="${alumno}"
                           >
+
+                          <!-- Add hidden form field to handle update -->
+                            <input type="hidden" th:field="*{id}" />
                             <!--ENCTYPE ES IMPORTANTE -->
                             <div class="mb-3">
                               <label for="num_control" class="negrita">Numero de Control:</label >
                               <div>
-                                <input th:field="*{num_control}" class="form-control" placeholder="Solo nuemros" required="required" name="num_control" type="text" id="num_control">
+                                <input th:field="*{num_control}" class="form-control" placeholder="Solo numeros" required="required" name="num_control" type="number" id="num_control">
                               </div>
                             </div>
 
@@ -128,7 +131,7 @@
                             <div class="mb-3">
                               <label for="semestre" class="negrita">Semestre:</label >
                               <div>
-                                <input th:field="*{semestre}" class="form-control" placeholder="Solo nuemros" required="required" name="semestre" type="number" id="semestre">
+                                <input th:field="*{semestre}" class="form-control" placeholder="Solo numeros" required="required" name="semestre" type="number" id="semestre">
                               </div>
                             </div>
 
