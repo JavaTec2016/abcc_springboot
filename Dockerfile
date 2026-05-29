@@ -1,5 +1,5 @@
 # Importing JDK and copying required files
-FROM openjdk:17-oracle
+FROM openjdk:17-oracle AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src src
